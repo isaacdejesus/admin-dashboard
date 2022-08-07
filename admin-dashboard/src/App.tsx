@@ -1,55 +1,36 @@
-import React from 'react';
-import { Counter } from './features/counter/Counter';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+import {useEffect} from 'react';
+import {BrowserRouter, Router, Route} from 'react-router-dom';
+import {FiSettings} from 'react-icons/fi';
+import {TooltipComponent} from '@syncfusion/ej2-react-popups';
+import './App.css';
+const App = () => {
+    const activeMenu = true;
+    return(
+        <div>
+            <BrowserRouter>
+                <div className="flex relative dark:bg-main-dark-bg">
+                    <div className="fixed right-4 bottom-4" style={{zIndex: '1000'}}>
+                        <TooltipComponent width="180px" height="50px"content="ssettings" >
+                            <button type="button"
+                                className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white" 
+                                style={{background: 'blue', borderRadius: '50%'}}
+                            >
+                                <FiSettings />
+                            </button>
+                        </TooltipComponent>
+                    </div>
+        {activeMenu ? (
+            <div className="w-72 fixed sidebar dark:bg-secondary-dark-db bg-white">
+                SideBar
+            </div>
+            ) : (
+            <div className="w-0 dark:bg-secondary-dark-bg">
+                Sidebar w-0
+            </div>
+        )}
+                </div>
+            </BrowserRouter>
+        </div>
+    )
 }
-
 export default App;

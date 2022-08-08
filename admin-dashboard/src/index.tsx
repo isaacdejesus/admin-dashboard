@@ -5,6 +5,8 @@ import { store } from './app/store';
 import App from './App';
 import './index.css';
 
+import {registerLicense} from '@syncfusion/ej2-base';
+registerLicense('ORg4AjUWIQA/Gnt2VVhiQlFadVlJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdk1jXn5WdXFXQWBZUEc=');
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 

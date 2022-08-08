@@ -1,0 +1,4 @@
+in order to use syncfusion need to register for a key
+then add the following to the index.tsx file
+import {registerLicense} from '@syncfusion/ej2-base';
+registerLicense('ORg4AjUWIQA/Gnt2VVhiQlFadVlJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdk1jXn5WdXFXQWBZUEc=');

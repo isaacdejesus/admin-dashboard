@@ -6,8 +6,9 @@ import {Navbar, Footer, Sidebar, ThemeSettings} from './components';
 import {Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers
 , Kanban, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Line} from './pages';
 import './App.css';
+import {useAppSelector} from './app/hooks';
 const App = () => {
-    const activeMenu = true;
+    const activeMenu = useAppSelector(state => state.ui.activeMenu);
     return(
         <div>
             <BrowserRouter>
@@ -38,7 +39,6 @@ const App = () => {
                         <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
                             <Navbar />
                         </div>
-                    </div>
                     <div>
                         <Routes>
                                 {/* */}
@@ -64,6 +64,7 @@ const App = () => {
                             <Route path="/pyramid" element={<Pyramid />} />
                             <Route path="/stacked" element={< Stacked />} />
                         </Routes>
+                    </div>
                     </div>
                 </div>
             </BrowserRouter>

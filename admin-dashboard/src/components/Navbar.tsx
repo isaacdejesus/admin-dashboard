@@ -33,6 +33,7 @@ const Navbar = () => {
     const notification = useAppSelector(state => state.ui.notification);
     const userProfile = useAppSelector(state => state.ui.userProfile);
     const screenSize = useAppSelector(state => state.ui.screenSize);
+    const currentColor =  useAppSelector(state=> state.ui.currentColor);
     const dispatch = useAppDispatch();
     useEffect(() => {
         const handleResize = () => dispatch(setScreenSize(window.innerWidth))
@@ -51,7 +52,7 @@ const Navbar = () => {
             <NavButton 
                 title="Menu" 
                 customFunc={()=> dispatch(setActiveMenu(!activeMenu))}
-                color="blue"
+                color={currentColor}
                 icon={<AiOutlineMenu />}
                 dotColor=""
             />
@@ -59,21 +60,21 @@ const Navbar = () => {
                 <NavButton 
                     title="Cart" 
                     customFunc={()=> dispatch(setCart(!cart))}
-                    color="blue"
+                    color={currentColor}
                     icon={<FiShoppingCart />}
                     dotColor=""
                 />
                 <NavButton 
                     title="Chat" 
                     customFunc={()=> dispatch(setChat(!chat))}
-                    color="blue"
+                    color={currentColor}
                     icon={<BsChatLeft />}
                     dotColor="#03C9D7"
                 />
                 <NavButton 
                     title="Notifications" 
                     customFunc={()=> dispatch(setNotifications(!notification))}
-                    color="blue"
+                    color={currentColor}
                     icon={<RiNotification3Line />}
                     dotColor="#03C9D7"
                 />

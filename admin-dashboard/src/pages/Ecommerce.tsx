@@ -3,8 +3,10 @@ import { GoPrimitiveDot } from 'react-icons/go';
 import { Stacked, Pie, Button, SparkLine } from '../components';
 import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy'
 import {EarningData, SparkLineProps} from '../types';
+import {useAppSelector} from '../app/hooks';
 const Ecommerces = () => {
     const divStyle = "bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repat bg-cover bg-center";
+    const currentColor = useAppSelector(state=> state.ui.currentColor);
     return(
         <div className="mt-12">
             <div className="flex flex-wrap lg:flex-nowrap justify-center">
@@ -18,7 +20,7 @@ const Ecommerces = () => {
                     <div className="mt-6">
                         <Button
                             color="white"
-                            bgColor="blue"
+                            bgColor={currentColor}
                             text="Download"
                             borderRadius="10px"
                             size="md"
@@ -93,15 +95,30 @@ const Ecommerces = () => {
                             </div>
                             <div className='mt-5'>
                                 <SparkLine 
-                                    currentColor="blue" 
+                                    currentColor={currentColor} 
                                     id="line-sparkline"
                                     type="Line"
                                     height="80px"
                                     width="250px"
                                     data={SparklineAreaData}
-                                    color="blue"
+                                    color={currentColor}
                                 />
                             </div>
+                            <div className="mt-10">
+                                <Button 
+                                    color="white"
+                                    bgColor={currentColor}
+                                    text="Download Report"
+                                    borderRadius="10px"
+                                    size="2"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <Stacked 
+                                width="320px" 
+                                height="360px"    
+                            />
                         </div>
                     </div>
                 </div>

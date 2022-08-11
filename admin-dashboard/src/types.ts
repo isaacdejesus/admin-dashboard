@@ -180,3 +180,65 @@ export interface ThemeColors {
     name: string,
     color: string,
 };
+
+interface Marker {
+    visible: boolean,
+    width: number,
+    height: number
+}
+export interface LineCustomSeries {
+    dataSource:  any,
+    xName: string,
+    yName: string,
+    name: string,
+    width: string,
+    marker: Marker ,
+    type: string
+};
+export interface LinePrimaryXAxisProps {
+    valueType: any,
+    labelFormat: string,
+    intervalType: any,
+    edgeLabelPlacement: any,
+    majorGridLines: Width,
+    background: string
+};
+export interface LinePrimaryYAxisProps{
+    labelFormat: any,
+    rangePadding: any,
+    minimum: number
+    maximum: number,
+    interval: number,
+    lineStyle: Width,
+    majorTickLines: Width,
+    minorTickLines: Width
+};
+
+export interface AreaCustomSeries {
+    dataSource: any,
+    xName: string,
+    yName: string,
+    name: string,
+    opacity: string,
+    type: any,
+    width: string
+};
+
+export interface AreaPrimaryXAxisProps{
+    valueType: any,
+    labelFormat: string,
+    majorGridLines: Width,
+    intervalType: any,
+    edgeLabelPlacement: any,
+    labelStyle: {color: string}
+};
+
+export interface AreaPrimaryYAxisProps {
+    labelFormat: any,
+    lineStyle: Width,
+    maximum: number,
+    interval: number,
+    majorTickLines: Width,
+    minorTickLines: Width,
+    labelStyle: {color: string}
+};

@@ -242,3 +242,151 @@ export interface AreaPrimaryYAxisProps {
     minorTickLines: Width,
     labelStyle: {color: string}
 };
+export interface BarPrimaryXAxis {
+    valueType: any,
+    interval: number,
+    majorGridLines: Width
+};
+
+export interface BarPrimaryYAxis {
+    majorGridLines: Width,
+    majorTickLines: Width,
+    lineStyle: Width,
+    labelStyle: {color: string}
+};
+interface BarMarker {
+    dataLabel: {
+        visible: boolean,
+        position: string,
+        font: { fontWeight: string, color: string }
+    };
+};
+export interface BarCustomSeries {
+    dataSource: any,
+    xName: string,
+    yName: string,
+    name: string,
+    type: any,
+    marker: BarMarker
+};
+
+export interface RangeColorMapping {
+    label: string,
+    start: string,
+    end: string,
+    colors: any
+};
+export interface ColorMappingPrimaryXAxisProps {
+    valueType: string,
+    majorGridLines: Width,
+    title: string
+};
+export interface ColorMappingPrimaryYAxisProps {
+    lineStyle: Width,
+    majorTickLines: Width,
+    minorTickLines: Width,
+    labelFormat: any,
+    title: string
+};
+export interface FinancialPrimaryXAxisProps {
+    valueType: any,
+    minimum: Date,
+    maximum: Date,
+    crosshairTooltip: {enable: boolean},
+    majorGridLines: Width,
+};
+export interface FinancialPrimaryYAxisProps{
+    title: string,
+    minimum: number,
+    maximum: number, 
+    interval: number,
+    lineStyle: Width,
+    majorTickLines: Width
+};
+export interface CartData {
+    image: any,
+    name: string,
+    category: string,
+    price: string,
+};
+export interface ChatData {
+    image: any,
+    message: string,
+    desc: string,
+    time: string,
+};
+
+export interface RecentTransactions {
+    icon: JSX.Element,
+    amount: string,
+    title: string,
+    desc: string,
+    iconColor: string,
+    iconBg: string,
+    pcColor: string,
+    percentage?: string,
+};
+
+export interface WeeklyStats {
+    icon: JSX.Element,
+    amount: string,
+    title: string,
+    desc: string,
+    iconBg: string,
+    pcColor: string,
+};
+
+export interface ProductsPerformance {
+    image: any,
+    title: string,
+    desc: string,
+    rating: string,
+    itemSold: string,
+    earningAmount: string,
+};
+interface Data {
+    title: string,
+    desc: string,
+};
+interface Teams {
+    name: string,
+    color: string,
+};
+interface Leaders {
+    image: any
+}
+export interface MedicalProBranding {
+    data: Data[],
+    teams: Teams[],
+    leaders: Leaders[],
+};
+export interface UserProfileData {
+    icon: JSX.Element,
+    title: string,
+    desc: string,
+    iconColor: string,
+    iconBg: string,
+};
+
+export interface DropDownData {
+    Id: string,
+    Time: string,
+};
+export interface PieChartData {
+    x: string,
+    y: number,
+    text: string,
+};
+export interface FinancialChartData {
+    x: Date,
+    open: number,
+    high: number,
+    low: number,
+    close: number,
+    volume: number,
+};
+export interface PyramidDataProps{
+    x: string,
+    y: number,
+    text: string,
+};

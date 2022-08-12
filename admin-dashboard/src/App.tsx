@@ -7,13 +7,21 @@ import {Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers
 , Kanban, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Line} from './pages';
 import './App.css';
 import {useAppSelector, useAppDispatch} from './app/hooks';
-import {setThemeSettings} from './reducers/uiReducer';
+import {setThemeSettings, setCurrentColor, setCurrentMode} from './reducers/uiReducer';
 const App = () => {
     const activeMenu = useAppSelector(state => state.ui.activeMenu);
     const themeSettings = useAppSelector(state => state.ui.themeSettings);
     const currentColor = useAppSelector(state=> state.ui.currentColor);
     const currentMode = useAppSelector(state=> state.ui.currentMode);
     const dispatch = useAppDispatch();
+    useEffect(() => {
+        const currentThemeColor = localStorage.getItem('colorMode');
+        const currentThemeMode = localStorage.getItem('themeMode');
+        if (currentThemeColor && currentThemeMode) {
+          dispatch(setCurrentColor(currentThemeColor));
+          dispatch(setCurrentMode(currentThemeMode));
+        }
+      }, []);
     return(
         <div className={currentMode === 'Dark' ? 'dark' : ''}>
             <BrowserRouter>

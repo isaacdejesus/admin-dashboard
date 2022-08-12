@@ -271,13 +271,13 @@ export interface BarCustomSeries {
 };
 
 export interface RangeColorMapping {
-    label: string,
-    start: string,
-    end: string,
+    label: any,
+    start: any,
+    end: any,
     colors: any
 };
 export interface ColorMappingPrimaryXAxisProps {
-    valueType: string,
+    valueType: any,
     majorGridLines: Width,
     title: string
 };
